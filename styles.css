@@ -12,10 +12,11 @@ body {
   display: grid;
   gap: 1rem;
   margin: 1rem;
+  justify-items: center;
 }
 
 .card {
-  width: auto;
+  width: 60%;
   height: auto;
   border: 1px solid gray;
   border-radius: 20px;
@@ -51,6 +52,8 @@ button:active {
 
 .nextBtn {
   position: relative;
-  left: 220px;
+  left: 10rem;
   bottom: 4px;
+  background-color: #535353;
+
 }

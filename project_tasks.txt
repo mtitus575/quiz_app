@@ -4,13 +4,13 @@
    - Features: Multiple-choice questions, score tracking, feedback.
 
    - Checkpoints:
-     1. Create an array of question objects.
-     2. Build the UI for displaying questions and options.
+     1. Create an array of question objects. = DONE
+     2. Build the UI for displaying questions and options. = DONE
      3. Add logic to check answers and track score.
-     4. Show feedback after each question.
+     4. Show feedback after each question. =DONE (clrs do this)
      5. Display final score and allow restart.
      6. Style the app for engagement.
-     
+
    - Topics to cover before starting:
      * Basics & Fundamentals
      * Working with Data
