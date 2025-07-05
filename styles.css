@@ -1,0 +1,56 @@
+* {
+  background-color: rgb(82, 82, 82);
+  box-sizing: border-box;
+}
+body {
+  text-align: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  line-height: 1.5;
+}
+
+.questionCard {
+  display: grid;
+  gap: 1rem;
+  margin: 1rem;
+}
+
+.card {
+  width: auto;
+  height: auto;
+  border: 1px solid gray;
+  border-radius: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.answerCtn {
+  height: 200px;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+button {
+  border: 0.5px solid #363535;
+  border-radius: 10px;
+  background-color: #4d4d4d;
+}
+
+button:hover {
+  scale: 1.01;
+  box-shadow: 0.1px 0.1px 2px 0.1px;
+}
+
+button:active {
+  scale: 1;
+  box-shadow: 0.1px 0.1px 0px 0.1px;
+}
+
+.nextBtn {
+  position: relative;
+  left: 220px;
+  bottom: 4px;
+}

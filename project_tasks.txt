@@ -1,0 +1,17 @@
+4. Quiz App
+   - Objectives: Work with arrays of questions, track user progress, and provide feedback based on answers.
+   - Practice: Arrays, objects, loops, conditionals, DOM manipulation.
+   - Features: Multiple-choice questions, score tracking, feedback.
+
+   - Checkpoints:
+     1. Create an array of question objects.
+     2. Build the UI for displaying questions and options.
+     3. Add logic to check answers and track score.
+     4. Show feedback after each question.
+     5. Display final score and allow restart.
+     6. Style the app for engagement.
+     
+   - Topics to cover before starting:
+     * Basics & Fundamentals
+     * Working with Data
+     * DOM Manipulation
