@@ -1,4 +1,4 @@
-const questionBankJS = [
+const questionBank = [
   {
     question:
       "What is the difference between `undefined` and `null` in JavaScript?",
@@ -172,4 +172,4 @@ const questionBankJS = [
   },
 ];
 
-export default questionBankJS;
+export default questionBank;

@@ -1,25 +1,27 @@
 import questionBank from "./questions.js";
 
 const container = document.querySelector(".questionCard");
+let questionCount = 0;
 
-//Looping over the question bank array of objects.
-questionBank.forEach((set) => {
-  //`set` = each set of questions object.
-  cardStyle(set); //calling the card styling for each question
-});
+cardStyle(questionBank[questionCount]); //Displays the first question.
 
 //Main card
+//function to style the card
 function cardStyle(set) {
-  //function to style the card
   const card = document.createElement("div");
-  container.append(card);
   card.className = "card";
+
+  //The if: only displays the card if the index is the same as the count.
+  if (questionBank.indexOf(set) === questionCount) {
+    container.append(card);
+  }
 
   //functional components imported to the card:
   card.append(questionHeading(set));
   card.append(answersDiv(set));
-  card.append(nextBtn());
+  // card.append(nextBtn());
 }
+
 // This displays the question into the cards
 function questionHeading(set) {
   const questionBnr = document.createElement("h4");
@@ -37,8 +39,6 @@ function answersDiv(set) {
     const answerBtn = document.createElement("button");
     answerBtn.innerText = option;
     answerCtn.append(answerBtn);
-    console.log(option);
-
     //Change clr based on the answer clicked (green = right, red = wrong)
     function handleAnswerClick(event) {
       event.preventDefault();
@@ -57,14 +57,25 @@ function answersDiv(set) {
   }
   return answerCtn;
 }
-//This is the next button for each card.
-function nextBtn() {
-  const next = document.createElement("button");
-  next.innerText = "Next Question =>";
-  next.className = "nextBtn";
 
-  return next;
+// Adding a next button wit logic:
+const NextBtn = document.getElementById("next");
+
+function handleNext(e) {
+  e.preventDefault();
+
+  if (questionCount < questionBank.length - 1) {
+    questionCount++;
+    container.innerHTML = "";
+    cardStyle(questionBank[questionCount]);
+  }
+
+  if (questionCount === questionBank.length - 1) {
+    NextBtn.disabled = true;
+  }
 }
+
+NextBtn.addEventListener("click", handleNext);
 
 /*TODO Next
 1. Hide all, but one, card.
