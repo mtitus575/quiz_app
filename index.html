@@ -9,9 +9,19 @@
     <script src="./main.js" defer type="module"></script>
   </head>
   <body>
-    <div class="questionCard">
-    </div>
-    <button id="next" >Next</button>
-
+    <section id="quiz-ctn">
+      <div class="questionCard"></div>
+      <div class="finalScoreCard">
+        <h3>Final Score!</h3>
+        <p>Youre got <span>X</span> out of <span>X</span> coorect!</p>
+        <button id="DoneBtn" disabled>Done</button>
+        <!--This button can later be used to redirect to a streak leaderboard once the score is persistently saved in a database-->
+        <button id="retryBtn">Retry</button>
+      </div>
+      <div class="nav-btns-ctn">
+        <button id="next">Next</button>
+        <button id="completeBtn">complete</button>
+      </div>
+    </section>
   </body>
 </html>

@@ -55,5 +55,21 @@ button:active {
   left: 10rem;
   bottom: 4px;
   background-color: #535353;
+}
 
+.nav-btns-ctn {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.finalScoreCard {
+  justify-self: center;
+
+  width: 60%;
+  height: auto;
+  border: 1px solid gray;
+  border-radius: 20px;
+  box-sizing: border-box;
+  padding-bottom: 1rem;
 }

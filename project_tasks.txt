@@ -15,3 +15,9 @@
      * Basics & Fundamentals
      * Working with Data
      * DOM Manipulation
+  
+  -Things to develop later:
+    1. Add logic to disabled DONE-button 
+      * This will eventually go to a leader board
+      * The score should be saved persistently in a database
+      * The score can be graphed over time.

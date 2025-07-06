@@ -3,7 +3,8 @@ import questionBank from "./questions.js";
 const container = document.querySelector(".questionCard");
 let questionCount = 0;
 
-cardStyle(questionBank[questionCount]); //Displays the first question @ start of program.
+//Displays the first question @ start of program:
+cardStyle(questionBank[questionCount]);
 
 //Main card
 //function to style the card
@@ -45,6 +46,8 @@ function answersDiv(answerSet) {
 
       if (answerSet.answer === answerBtn.innerText) {
         answerBtn.style.backgroundColor = "green";
+        scoreTracker();
+        totalScore();
       } else {
         answerBtn.style.backgroundColor = "red";
       }
@@ -58,8 +61,11 @@ function answersDiv(answerSet) {
   return answerCtn;
 }
 
-// Adding a next button with logic:
+// Adding a next and complete button with logic:
 const NextBtn = document.getElementById("next");
+const completeBtn = document.getElementById("completeBtn");
+completeBtn.style.display = "none";
+completeBtn.disabled = true;
 
 function handleNext(e) {
   e.preventDefault();
@@ -72,29 +78,47 @@ function handleNext(e) {
   //if at the end of the questionBank array, disable the next button
   if (questionCount === questionBank.length - 1) {
     NextBtn.disabled = true;
+    completeBtn.style.display = "flex";
+    completeBtn.disabled = false;
   }
 }
 
 NextBtn.addEventListener("click", handleNext);
 
+//Complete-button logic:
+const finalCard = document.querySelector(".finalScoreCard");
+finalCard.style.display = "none";
+
+function finalScoreCard() {
+  // container.style.disabled = 'none'
+  finalCard.style.display = "block";
+  container.style.display = "none";
+  NextBtn.style.display = "none";
+  completeBtn.style.display = "none";
+}
+completeBtn.addEventListener("click", finalScoreCard);
+
 //Tracking correct answers score:
 let correctAnswers = 0;
-let wrongAnswers = 0;
+const totalQuestions = questionBank.length;
+console.log(totalQuestions);
 
-function ScoreTracker(answerSet) {
-  if (answerSet.answer === answerBtn.innerText) {
-    correctAnswers++;
-  } else {
-    wrongAnswers++;
-  }
+function scoreTracker() {
+  correctAnswers++;
+  console.log("I am inside the scoreTracker");
+  console.log(correctAnswers);
 }
 
-//To DO: Figure out where the call for the `ScoreTracker` needs to be placeed.
+//Calculating percentage correct:
+function totalScore() {
+  const calculatedScore = (correctAnswers / totalQuestions) * 100;
+  console.log(`${calculatedScore} %`);
+  return `${calculatedScore} %`;
+}
+
+//To DO: Figure out where the call for the `ScoreTracker` needs to be placed.
 
 /*TODO Next
-1. Hide all, but one, card. DONE
-2. Allow next button to show the next card DONE
-3. Track the correct answers
-4. Display final score out of all questions
-5. Allow restart
+1. Add actual score to the scoreCard in the `spans`
+2. Allow restart - this button resets the quiz (to display code form line 7 again)
 */
