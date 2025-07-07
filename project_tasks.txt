@@ -9,7 +9,7 @@
      3. Add logic to check answers and track score.
      4. Show feedback after each question. = DONE (clrs do this)
      5. Display final score and allow restart. = DONE
-     6. Style the app for engagement (Do this at home to use 2nd screen. Media queries to be done)
+     6. Style the app for engagement (Do this at home to use 2nd screen. Media queries to be done. Ensure good layout for all devices)
 
    - Topics to cover before starting:
      * Basics & Fundamentals
