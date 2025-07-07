@@ -8,13 +8,34 @@
      2. Build the UI for displaying questions and options. = DONE
      3. Add logic to check answers and track score.
      4. Show feedback after each question. = DONE (clrs do this)
-     5. Display final score and allow restart.
+     5. Display final score and allow restart. = DONE
      6. Style the app for engagement (Do this at home to use 2nd screen. Media queries to be done)
 
    - Topics to cover before starting:
      * Basics & Fundamentals
      * Working with Data
      * DOM Manipulation
+
+  
+  - Improvements that can be made:
+    1. Don't hide/show buttons repeatedly in loops.
+    2. Make button logic cleaner/reusable:
+    2.1 Add the buttons into helper functions and call those where needed.
+    2.2 e.g. showNextBtn(), hideNextBtn(), showCompleteBtn(), hideCompleteBtn()
+    3. Reset button styles between card loads.
+    4. Wrap the initalization into one function at run this on loading and when retry button is clicked
+    4.1 It can look someting like this:
+      function startQuiz() {
+        questionCount = 0;
+        correctAnswers = 0;
+        container.innerHTML = "";
+        finalCard.style.display = "none";
+        container.style.display = "block";
+        hideNextButton();
+        hideCompleteButton();
+        cardStyle(questionBank[questionCount]);
+      }
+    5. Seperate logic and UI into different files.
   
   -Things to develop later:
     1. Add logic to disabled DONE-button 

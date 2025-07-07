@@ -169,7 +169,7 @@ const questionBank = [
       "What will this code output and why?\nfor (var i = 0; i < 3; i++) {\n  setTimeout(() => console.log(i), 100);\n}",
     options: ["0 1 2", "3 3 3", "undefined", "0 1 2 3"],
     answer: "3 3 3",
-  }
+  },
 ];
 
 export default questionBank;
