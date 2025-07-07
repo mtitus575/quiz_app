@@ -48,8 +48,11 @@ function answersDiv(answerSet) {
         answerBtn.style.backgroundColor = "green";
         scoreTracker();
         totalScore();
+        NextBtn.disabled = false
       } else {
         answerBtn.style.backgroundColor = "red";
+        NextBtn.disabled = false
+
       }
 
       const allCardBtns = answerCtn.querySelectorAll("button"); //This selects on buttons from the `answerCtn` only
@@ -63,6 +66,7 @@ function answersDiv(answerSet) {
 
 // Adding a next and complete button with logic:
 const NextBtn = document.getElementById("next");
+NextBtn.disabled = true
 const completeBtn = document.getElementById("completeBtn");
 completeBtn.style.display = "none";
 completeBtn.disabled = true;
@@ -78,6 +82,7 @@ function handleNext(e) {
   //if at the end of the questionBank array, disable the next button
   if (questionCount === questionBank.length - 1) {
     NextBtn.disabled = true;
+    NextBtn.style.display = 'none'
     completeBtn.style.display = "flex";
     completeBtn.disabled = false;
   }
@@ -85,12 +90,30 @@ function handleNext(e) {
 
 NextBtn.addEventListener("click", handleNext);
 
+//Tracking correct answers score:
+let correctAnswers = 0;
+const totalQuestions = questionBank.length;
+
+function scoreTracker() {
+  correctAnswers++;
+}
+
+//Calculating percentage correct:
+function totalScore() {
+  const calculatedScore = (correctAnswers / totalQuestions) * 100;
+  return `${calculatedScore} %`;
+}
+
 //Complete-button logic:
 const finalCard = document.querySelector(".finalScoreCard");
 finalCard.style.display = "none";
 
 function finalScoreCard() {
-  // container.style.disabled = 'none'
+  const displayScore = document.getElementById("finalScore");
+  displayScore.innerText = totalScore();
+  const displayTotalQuestions = document.getElementById("totalQuestions");
+  displayTotalQuestions.innerText = totalQuestions;
+
   finalCard.style.display = "block";
   container.style.display = "none";
   NextBtn.style.display = "none";
@@ -98,27 +121,16 @@ function finalScoreCard() {
 }
 completeBtn.addEventListener("click", finalScoreCard);
 
-//Tracking correct answers score:
-let correctAnswers = 0;
-const totalQuestions = questionBank.length;
-console.log(totalQuestions);
+//Restart the quiz:
+const retryBtn = document.getElementById("retryBtn");
 
-function scoreTracker() {
-  correctAnswers++;
-  console.log("I am inside the scoreTracker");
-  console.log(correctAnswers);
+function restartQuiz() {
+   //not done. Need to figure out how to restart the quiz with this function
+
 }
 
-//Calculating percentage correct:
-function totalScore() {
-  const calculatedScore = (correctAnswers / totalQuestions) * 100;
-  console.log(`${calculatedScore} %`);
-  return `${calculatedScore} %`;
-}
-
-//To DO: Figure out where the call for the `ScoreTracker` needs to be placed.
+retryBtn.addEventListener("click", restartQuiz);
 
 /*TODO Next
-1. Add actual score to the scoreCard in the `spans`
-2. Allow restart - this button resets the quiz (to display code form line 7 again)
+1. Allow restart - this button resets the quiz (to display code form line 7 again)
 */

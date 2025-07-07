@@ -7,9 +7,9 @@
      1. Create an array of question objects. = DONE
      2. Build the UI for displaying questions and options. = DONE
      3. Add logic to check answers and track score.
-     4. Show feedback after each question. =DONE (clrs do this)
+     4. Show feedback after each question. = DONE (clrs do this)
      5. Display final score and allow restart.
-     6. Style the app for engagement.
+     6. Style the app for engagement (Do this at home to use 2nd screen. Media queries to be done)
 
    - Topics to cover before starting:
      * Basics & Fundamentals
@@ -21,3 +21,5 @@
       * This will eventually go to a leader board
       * The score should be saved persistently in a database
       * The score can be graphed over time.
+    2. Build a login page
+    3. Make it a mobile app as well.
